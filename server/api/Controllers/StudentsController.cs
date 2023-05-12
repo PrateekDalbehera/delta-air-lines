@@ -19,8 +19,8 @@ public class StudentsController : ControllerBase
     }
 
     [HttpPost(Name = "SearchStudents")]
-    public async Task<ActionResult<IEnumerable<IStudent>>> SearchStudentsAsync(SearchParams searchParams)
+    public async Task<ActionResult<StudentsResponse>> SearchStudentsAsync(SearchParams searchParams)
     {
-        return Ok(await _studentService.SearchStudentsAsync(searchParams.Query));
+        return Ok(new StudentsResponse() { Students = await _studentService.SearchStudentsAsync(searchParams.Query)});
     }
 }

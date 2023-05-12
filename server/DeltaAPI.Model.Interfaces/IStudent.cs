@@ -6,5 +6,5 @@ public interface IStudent
 {
     string Name { get; set; }
     int Age { get; set; }
-    IEnumerable<IHobby> Hobbies { get; set; }
+    IEnumerable<string> Hobbies { get; set; }
 }

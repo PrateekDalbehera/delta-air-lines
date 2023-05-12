@@ -1,0 +1,19 @@
+<kendo-grid
+    [data]="data"
+    [loading]="loading"
+    [pageSize]="10"
+    [pageable]="true"
+    [sortable]="true"
+    [height]="400"
+>
+    <ng-template kendoGridToolbarTemplate>
+        <kendo-textbox
+            [style.width.px]="300"
+            placeholder="Search in students..."
+            (afterValueChanged)="onAfterValueChange($event)"
+        ></kendo-textbox>
+    </ng-template>
+    <kendo-grid-column field="name" title="Name" [width]="250"></kendo-grid-column>
+    <kendo-grid-column field="age" title="Age" [width]="150"></kendo-grid-column>
+    <kendo-grid-column field="hobbies" title="Hobbies" [width]="250"></kendo-grid-column>
+</kendo-grid>

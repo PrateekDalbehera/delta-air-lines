@@ -6,5 +6,5 @@ public class Student : IStudent
 {
     public string Name { get; set; }
     public int Age { get; set; }
-    public IEnumerable<IHobby> Hobbies { get; set; }
+    public IEnumerable<string> Hobbies { get; set; }
 }

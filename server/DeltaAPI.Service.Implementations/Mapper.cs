@@ -12,7 +12,7 @@ public class Mapper
             {
                 Name = entity.Name,
                 Age = entity.Age,
-                Hobbies = entity.Hobbies.ToList().ConvertAll(h => new Hobby { Name = h.Name})
+                Hobbies = entity.Hobbies.ToList().ConvertAll(h => h.Name)
             });
     }
 }
