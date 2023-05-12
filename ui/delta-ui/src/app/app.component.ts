@@ -11,6 +11,7 @@ import { StudentsResponse } from './students.model';
 })
 export class AppComponent {
   title = 'delta-ui';
+  private subscriber: any;
   public loading = false;
 
   public data: GridDataResult = { data: [], total: 0 };
@@ -21,10 +22,11 @@ export class AppComponent {
 
   public sendApiRequest(queryStr: string): void {
       this.loading = true;
-      this.service.searchStudents(queryStr).subscribe((response: StudentsResponse) => {
-          this.data = { data: response.students, total: response.students.length};
-          this.loading = false;
-      });
+      this.subscriber =
+        this.service.searchStudents(queryStr).subscribe((response: StudentsResponse) => {
+            this.data = { data: response.students, total: response.students.length};
+            this.loading = false;
+        });
   }
 
   public searchStudents(event: any): void {
@@ -33,5 +35,9 @@ export class AppComponent {
 
   public onAfterValueChange(value: string): void {
       this.sendApiRequest(value);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriber.unsubscribe();
   }
 }
