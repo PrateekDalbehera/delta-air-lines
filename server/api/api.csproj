@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DeltaAPI.Repository.Interfaces\DeltaAPI.Repository.Interfaces.csproj" />
+    <ProjectReference Include="..\DeltaAPI.Repository.Implementations\DeltaAPI.Repository.Implementations.csproj" />
+    <ProjectReference Include="..\DeltaAPI.Model.Interfaces\DeltaAPI.Model.Interfaces.csproj" />
+    <ProjectReference Include="..\DeltaAPI.Model.Implementations\DeltaAPI.Model.Implementations.csproj" />
+    <ProjectReference Include="..\DeltaAPI.Service.Interfaces\DeltaAPI.Service.Interfaces.csproj" />
+    <ProjectReference Include="..\DeltaAPI.Service.Implementations\DeltaAPI.Service.Implementations.csproj" />
+  </ItemGroup>
+
+</Project>
