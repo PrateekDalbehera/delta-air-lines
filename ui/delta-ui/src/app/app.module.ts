@@ -1,31 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 
-import { GridModule } from '@progress/kendo-angular-grid';
-import { InputsModule } from '@progress/kendo-angular-inputs';
-
-import { AppRoutingModule } from './app-routing.module';
-import { StudentsService } from './students.service';
 import { AppComponent } from './app.component';
-import { AfterValueChangedDirective } from './after-value-changed.directive';
+import { AppRoutingModule } from './routes';
+import { AppShellComponent, PageNotFoundComponent } from './shared';
+import { HomeModule } from './features/home';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AfterValueChangedDirective
+    AppShellComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    GridModule,
-    InputsModule
+    AppRoutingModule,
+    HomeModule
   ],
-  providers: [StudentsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
